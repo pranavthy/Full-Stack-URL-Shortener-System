@@ -2,6 +2,9 @@
 
 A high-performance, full-stack URL shortener built with Node.js, Express, MongoDB, and React. This application provides a seamless experience for creating, managing, and tracking shortened links with real-time analytics.
 
+## 📺 Demo Video
+Watch the full application walkthrough on Loom: [LinkSwift Demo Video](https://www.loom.com/share/d426bddc74af453a87cc36a891344a7e)
+
 ## 🚀 Features
 
 ### Core Features (Mandatory)
