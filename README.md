@@ -9,9 +9,6 @@ Watch the full application walkthrough on Loom: [LinkSwift Demo Video](https://w
 - **Frontend (Vercel)**: [https://full-stack-url-shortener-system.vercel.app](https://full-stack-url-shortener-system.vercel.app)
 - **Backend (Render)**: [https://full-stack-url-shortener-system.onrender.com](https://full-stack-url-shortener-system.onrender.com)
 
-> [!NOTE]
-> The backend is hosted on Render's free tier. If the site is slow to load initially, please allow **30-60 seconds** for the server to wake up. Subsequent requests will be near-instant.
-
 ## 🚀 Features
 
 ### Core Features (Mandatory)
