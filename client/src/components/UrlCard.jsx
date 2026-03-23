@@ -7,7 +7,7 @@ import api from '../utils/api';
 
 export default function UrlCard({ url, onDelete }) {
   const [showQR, setShowQR] = useState(false);
-  const shortUrl = `http://127.0.0.1:5000/${url.shortCode}`;
+  const shortUrl = `${import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'}/${url.shortCode}`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shortUrl);
