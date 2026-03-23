@@ -10,8 +10,9 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'x-auth-token']
 }));
 app.use(helmet({ contentSecurityPolicy: false })); // Disable CSP for easier development
 app.use(morgan('dev'));
