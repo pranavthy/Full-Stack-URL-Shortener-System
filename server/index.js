@@ -9,7 +9,10 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  credentials: true
+}));
 app.use(helmet({ contentSecurityPolicy: false })); // Disable CSP for easier development
 app.use(morgan('dev'));
 
@@ -66,7 +69,7 @@ app.get('/admin/data', async (req, res) => {
           </table>
           
           <br><br>
-          <a href="http://localhost:3000" style="display: inline-block; padding: 10px 20px; background: #6366f1; color: white; text-decoration: none; border-radius: 5px;">Back to Frontend</a>
+          <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}" style="display: inline-block; padding: 10px 20px; background: #6366f1; color: white; text-decoration: none; border-radius: 5px;">Back to Frontend</a>
         </body>
       </html>
     `;
@@ -78,14 +81,15 @@ app.get('/admin/data', async (req, res) => {
 
 // Root endpoint for backend healthcheck/welcome
 app.get('/', (req, res) => {
+  const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
   res.send(`
     <html>
       <head><title>LinkSwift API Configuration</title></head>
       <body style="font-family: Arial, sans-serif; text-align: center; margin-top: 100px; padding: 20px;">
         <h1 style="color: #4f46e5;">LinkSwift Core API is Online 🚀</h1>
         <p style="font-size: 1.2rem; color: #555;">Your NodeJS/Express backend server is successfully connected to MongoDB and routing traffic.</p>
-        <a href="http://localhost:5000/admin/data" style="display: inline-block; padding: 10px 20px; background: #10b981; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; margin-right: 10px;">View Database Records</a>
-        <a href="http://localhost:3000" style="display: inline-block; padding: 10px 20px; background: #6366f1; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">Return to Frontend Dashboard</a>
+        <a href="/admin/data" style="display: inline-block; padding: 10px 20px; background: #10b981; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; margin-right: 10px;">View Database Records</a>
+        <a href="${frontendUrl}" style="display: inline-block; padding: 10px 20px; background: #6366f1; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">Return to Frontend Dashboard</a>
       </body>
     </html>
   `);
