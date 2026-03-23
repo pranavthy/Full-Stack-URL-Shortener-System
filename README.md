@@ -5,6 +5,13 @@ A high-performance, full-stack URL shortener built with Node.js, Express, MongoD
 ## 📺 Demo Video
 Watch the full application walkthrough on Loom: [LinkSwift Demo Video](https://www.loom.com/share/d426bddc74af453a87cc36a891344a7e)
 
+## 🔗 Live Deployment
+- **Frontend (Vercel)**: [https://full-stack-url-shortener-system.vercel.app](https://full-stack-url-shortener-system.vercel.app)
+- **Backend (Render)**: [https://full-stack-url-shortener-system.onrender.com](https://full-stack-url-shortener-system.onrender.com)
+
+> [!NOTE]
+> The backend is hosted on Render's free tier. If the site is slow to load initially, please allow **30-60 seconds** for the server to wake up. Subsequent requests will be near-instant.
+
 ## 🚀 Features
 
 ### Core Features (Mandatory)
