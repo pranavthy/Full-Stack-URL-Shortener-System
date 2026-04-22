@@ -92,4 +92,4 @@ graph LR
 - Short codes are 6 characters long by default using `nanoid`.
 
 ---
-This project is a part of a hackathon run by https://katomaran.com
+
